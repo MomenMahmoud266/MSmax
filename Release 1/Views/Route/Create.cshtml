@@ -1,0 +1,78 @@
+﻿@model Release_1.Models.RoutesViewModel
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-group">
+    <label for="exampleInputRoute1">Route Name</label>
+    @Html.TextBoxFor(model => model.route.route_name, new { htmlAttributes = new { @class="form-control" } })
+ 
+</div>
+<div class="radio">
+    <h4>Route State</h4>
+    <label> @Html.RadioButtonFor(model => model.route.route_state, "1") Active </label>
+    <label> @Html.RadioButtonFor(model => model.route.route_state, "0") Inactive </label>
+</div>
+<div class="form-group">
+    <label>Country: From</label>
+    @Html.DropDownList("countries", new SelectList(Model.countries, "country_id", "country_name", @"form-control"))
+                   
+</div>
+<div class="form-group">
+    <label>Country: To</label>
+    @Html.DropDownListFor(model => model.route.route_to_country, new SelectList(Model.countries, "country_id", "country_name")
+                            , new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label>City: From</label>
+    @Html.DropDownList("cities", new SelectList(Model.cities, "city_id", "city_name"), new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label>City: To</label>
+    @Html.DropDownListFor(model => model.route.route_to_city, new SelectList(Model.cities, "city_id", "city_name")
+                                                             , new { htmlAttributes = new { @class = "form-control" } })
+</div>
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+}
+<script src="~/Scripts/jquery-3.6.0.min.js">
+    console.log("test1");
+
+    $(document).ready(alert("jquery is working"));
+
+    function loadcountries(sender, target) {
+
+        var _target = document.getElementById(target);
+        var _seid = sender.value;
+        console.log(_seid);
+    }
+
+    $(function () {
+
+            console.log("test1");
+            var _target = $(docment.getElementById(target));
+            var _seid = sender.value;
+            $.ajax({
+                url: '@Url.Action("getcities")',
+                type: 'GET',
+                datatype: 'JSON',
+                data: { countryid: _seid },
+                success: function () { alert('We did it!'); }
+            });
+
+    })
+
+    //$(function () {
+    //    $("#countries").change(function () {
+    //        console.log($(this).val());
+    //        console.log(this);
+    //        console.log("test");
+    //    });
+    //});
+</script>

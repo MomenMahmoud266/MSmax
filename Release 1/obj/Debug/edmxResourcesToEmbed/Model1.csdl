@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masmix_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="city_bd">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="city_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="city_country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="city_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="city_general_conditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_pickup" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_delivery" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="country_bd">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="country_Name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="country_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="country_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="country_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="country_general_coditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="definition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="def_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="def_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="def_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="scode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="route_bd">
+    <Key>
+      <PropertyRef Name="route_id" />
+    </Key>
+    <Property Name="route_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="route_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="route_from_country" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_from_city" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_to_country" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_to_city" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service_bd">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="service_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wharehouse_bd">
+    <Key>
+      <PropertyRef Name="wharehouse_id" />
+    </Key>
+    <Property Name="wharehouse_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wharehouse_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wharehouse_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_size_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wharehouse_width_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_width_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_length_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_length_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_hieght_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_hieght_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_address" Type="String" MaxLength="450" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wharehouse_tel1" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wharehouse_tel2" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="is_office_delivery" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_warehouse" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="time_from" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="time_to" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="day_off" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="routes_of_services">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="route_id" />
+    </Key>
+    <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="services_of_cities">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="city_id" />
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shipments_of_services">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="shipment_id" />
+    </Key>
+    <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="shipment_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="masmix_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="city_bd" EntityType="Self.city_bd" />
+    <EntitySet Name="country_bd" EntityType="Self.country_bd" />
+    <EntitySet Name="definitions" EntityType="Self.definition" />
+    <EntitySet Name="route_bd" EntityType="Self.route_bd" />
+    <EntitySet Name="service_bd" EntityType="Self.service_bd" />
+    <EntitySet Name="wharehouse_bd" EntityType="Self.wharehouse_bd" />
+    <EntitySet Name="routes_of_services" EntityType="Self.routes_of_services" />
+    <EntitySet Name="services_of_cities" EntityType="Self.services_of_cities" />
+    <EntitySet Name="shipments_of_services" EntityType="Self.shipments_of_services" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,110 @@
+﻿@model Release_1.Models.WharehouseViewModel
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+<div class="form-group">
+    <label for="exampleInputWharehouse">Wharehouse Name</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_name, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+    <div class="radio">
+        <h4>Wharehouse State</h4>
+        <label> @Html.RadioButtonFor(model => model.wharehouse.wharehouse_state, "1") Active </label>
+        <label> @Html.RadioButtonFor(model => model.wharehouse.wharehouse_state, "0") Inactive </label>
+    </div>
+    <div class="form-group">
+        <label>Wharehouse country id</label>
+       
+        @Html.DropDownListFor(model => model.wharehouse.wharehouse_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+        , new { htmlAttributes = new { @id = "Country", @name = "Country", @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        <label>Wharehouse city id</label>
+        
+        @Html.DropDownListFor(model => model.wharehouse.wharehouse_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+        , new { htmlAttributes = new { @id = "Country", @name = "Country", @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        <label>Wharehouse size description</label>
+        @Html.TextAreaFor(model => model.wharehouse.wharehouse_size_desc, new
+        {
+            htmlAttributes =
+                new { @placeholder = "Your Place Holder", @rows = "3" }
+        })
+    </div>
+    <div class="form-group">
+        <label>Choose your unit</label>
+
+            <div class="form=group">
+
+                @Html.DropDownList("selectedvalue", new List<SelectListItem>
+                           {
+                               new SelectListItem {Text = "ft", Value = "1"},
+                               new SelectListItem {Text = "cm", Value = "0"}
+                           }
+                                , new { htmlAttributes = new { @class = "form-control", @id = "test" } })
+                
+            </div>
+       
+        </div>
+    <label>Wharehouse length</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_width_ft, new { htmlAttributes = new { @class = "form-control" } })
+<div class="form-group">
+    <label>Wharehouse length</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_length_ft, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label>Wharehouse hieght</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_hieght_ft, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label for="exampleInputWharehouseAddress">Wharehouse address</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_address, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label for="exampleInputTel1">Tel 1</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_tel1, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    <label for="exampleInputTel2">Tel 2</label>
+    @Html.EditorFor(model => model.wharehouse.wharehouse_tel2, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label>
+
+                Office-delivery
+                @Html.EditorFor(model => model.wharehouse.is_office_delivery, new { htmlAttributes = new { @class = "form-control" } })
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+
+                Wharehouse
+                @Html.EditorFor(model => model.wharehouse.is_warehouse, new { htmlAttributes = new { @class = "form-control" } })
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputTimeFrom">Time: From</label>
+        @Html.EditorFor(model => model.wharehouse.time_from, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputTimeTo">Time: To</label>
+        @Html.EditorFor(model => model.wharehouse.time_to, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputDayOff">Day-Off</label>
+        @Html.EditorFor(model => model.wharehouse.day_off, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+}

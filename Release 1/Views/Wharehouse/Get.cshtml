@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Release_1.wharehouse_bd>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_country_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_city_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_size_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_width_ft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_width_cm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_length_ft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_length_cm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_hieght_ft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_hieght_cm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_tel1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wharehouse_tel2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_office_delivery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_warehouse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time_from)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time_to)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.day_off)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_country_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_city_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_size_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_width_ft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_width_cm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_length_ft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_length_cm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_hieght_ft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_hieght_cm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_tel1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wharehouse_tel2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.is_office_delivery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.is_warehouse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time_from)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time_to)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day_off)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.wharehouse_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.wharehouse_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.wharehouse_id })
+        </td>
+    </tr>
+}
+
+</table>

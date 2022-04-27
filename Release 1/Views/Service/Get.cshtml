@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Release_1.service_bd>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.service_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_state)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_state)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.service_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.service_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.service_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masmix_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="city_bd">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="city_code" Type="varchar" MaxLength="5" />
+    <Property Name="city_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="city_country_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="city_desc" Type="varchar" MaxLength="450" />
+    <Property Name="city_general_conditions" Type="ntext" />
+    <Property Name="is_pickup" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_delivery" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="country_bd">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country_Name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="country_code" Type="varchar" MaxLength="5" />
+    <Property Name="country_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="country_desc" Type="varchar" MaxLength="450" />
+    <Property Name="country_general_coditions" Type="ntext" />
+  </EntityType>
+  <EntityType Name="definitions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="def_name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="def_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="def_desc" Type="varchar" MaxLength="450" />
+    <Property Name="scode" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="route_bd">
+    <Key>
+      <PropertyRef Name="route_id" />
+    </Key>
+    <Property Name="route_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="route_name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="route_from_country" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_from_city" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_to_country" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_to_city" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.routes_of_services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="routes_of_services">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="route_id" />
+    </Key>
+    <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="route_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service_bd">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="service_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.services_of_cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="services_of_cities">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="city_id" />
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.shipments_of_services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="shipments_of_services">
+    <Key>
+      <PropertyRef Name="ser" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="shipment_id" />
+    </Key>
+    <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="shipment_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wharehouse_bd">
+    <Key>
+      <PropertyRef Name="wharehouse_id" />
+    </Key>
+    <Property Name="wharehouse_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wharehouse_name" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="wharehouse_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_country_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_city_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wharehouse_size_desc" Type="varchar" MaxLength="450" Nullable="false" />
+    <Property Name="wharehouse_width_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_width_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_length_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_length_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_hieght_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_hieght_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="wharehouse_address" Type="varchar" MaxLength="450" Nullable="false" />
+    <Property Name="wharehouse_tel1" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="wharehouse_tel2" Type="varchar" MaxLength="11" />
+    <Property Name="is_office_delivery" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_warehouse" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="time_from" Type="varchar" MaxLength="5" />
+    <Property Name="time_to" Type="varchar" MaxLength="5" />
+    <Property Name="day_off" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <EntityContainer Name="masmix_dbModelStoreContainer">
+    <EntitySet Name="city_bd" EntityType="Self.city_bd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country_bd" EntityType="Self.country_bd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="definitions" EntityType="Self.definitions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="route_bd" EntityType="Self.route_bd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service_bd" EntityType="Self.service_bd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wharehouse_bd" EntityType="Self.wharehouse_bd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="routes_of_services" EntityType="Self.routes_of_services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [routes_of_services].[ser] AS [ser], 
+    [routes_of_services].[service_id] AS [service_id], 
+    [routes_of_services].[route_id] AS [route_id]
+    FROM [dbo].[routes_of_services] AS [routes_of_services]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="services_of_cities" EntityType="Self.services_of_cities" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [services_of_cities].[ser] AS [ser], 
+    [services_of_cities].[city_id] AS [city_id], 
+    [services_of_cities].[service_id] AS [service_id]
+    FROM [dbo].[services_of_cities] AS [services_of_cities]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="shipments_of_services" EntityType="Self.shipments_of_services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [shipments_of_services].[ser] AS [ser], 
+    [shipments_of_services].[service_id] AS [service_id], 
+    [shipments_of_services].[shipment_id] AS [shipment_id]
+    FROM [dbo].[shipments_of_services] AS [shipments_of_services]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

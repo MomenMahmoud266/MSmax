@@ -1,0 +1,22 @@
+﻿@model Release_1.service_bd
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-group">
+    <label for="exampleInputService">Service Name</label>
+    @Html.TextBoxFor(model => model.service_name, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+    <div class="radio">
+        <h4>Service State</h4>
+        <label> @Html.RadioButtonFor(model => model.service_state, "1") Active </label>
+        <label> @Html.RadioButtonFor(model => model.service_state, "0") Inactive </label>
+    </div>
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+}

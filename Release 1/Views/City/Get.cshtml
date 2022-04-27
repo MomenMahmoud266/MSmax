@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Release_1.city_bd>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.city_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city_state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city_country_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city_general_conditions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_pickup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_delivery)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_country_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city_general_conditions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.is_pickup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.is_delivery)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.city_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.city_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.city_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,48 @@
+﻿@model Release_1.Models.CityViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-group">
+    <label for="exampleInputCity1">City Name</label>
+    @Html.TextBoxFor(model => model.city.city_name, new { htmlAttributes = new { @class = "form-control" } })
+    <label for="exampleInputCityCode1">City Code</label>
+    @Html.TextBoxFor(model => model.city.city_code, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="radio">
+    <h4>City State</h4>
+    <label> @Html.RadioButtonFor(model => model.city.city_state, "1") Active </label>
+    <label> @Html.RadioButtonFor(model => model.city.city_state, "0") Inactive </label>
+</div>
+    <div class="form-group">
+        <label>Country</label>
+
+        @Html.DropDownListFor(model => model.city.city_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+                   , new { htmlAttributes = new { @id = "Country", @name = "Country", @class= "form-control" } })
+    </div>
+    <div class="form-group">
+        <label>Description</label> <br />
+        @Html.TextAreaFor(model => model.city.city_desc, new { htmlAttributes = 
+        new { @placeholder = "Your Place Holder",@rows="3" } })
+    </div>
+    <div class="form-group">
+        <label>General Conditions</label> <br />
+        @Html.TextAreaFor(model => model.city.city_general_conditions, new
+        {
+            htmlAttributes =
+        new { @placeholder = "Your Place Holder", @rows = "3" }
+        })
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            @Html.TextBoxFor(model => model.city.is_pickup, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <div class="checkbox">
+            @Html.TextBoxFor(model => model.city.is_delivery, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="box-footer">
+        <button type="submit" class="btn btn-primary" value="Add">Submit</button>
+    </div>
+}

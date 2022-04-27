@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masmix_dbModelStoreContainer" CdmEntityContainer="masmix_dbEntities">
+    <EntitySetMapping Name="city_bd">
+      <EntityTypeMapping TypeName="masmix_dbModel.city_bd">
+        <MappingFragment StoreEntitySet="city_bd">
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_code" ColumnName="city_code" />
+          <ScalarProperty Name="city_state" ColumnName="city_state" />
+          <ScalarProperty Name="city_country_id" ColumnName="city_country_id" />
+          <ScalarProperty Name="city_desc" ColumnName="city_desc" />
+          <ScalarProperty Name="city_general_conditions" ColumnName="city_general_conditions" />
+          <ScalarProperty Name="is_pickup" ColumnName="is_pickup" />
+          <ScalarProperty Name="is_delivery" ColumnName="is_delivery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="country_bd">
+      <EntityTypeMapping TypeName="masmix_dbModel.country_bd">
+        <MappingFragment StoreEntitySet="country_bd">
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country_Name" ColumnName="country_Name" />
+          <ScalarProperty Name="country_code" ColumnName="country_code" />
+          <ScalarProperty Name="country_state" ColumnName="country_state" />
+          <ScalarProperty Name="country_desc" ColumnName="country_desc" />
+          <ScalarProperty Name="country_general_coditions" ColumnName="country_general_coditions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="definitions">
+      <EntityTypeMapping TypeName="masmix_dbModel.definition">
+        <MappingFragment StoreEntitySet="definitions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="def_name" ColumnName="def_name" />
+          <ScalarProperty Name="def_state" ColumnName="def_state" />
+          <ScalarProperty Name="def_desc" ColumnName="def_desc" />
+          <ScalarProperty Name="scode" ColumnName="scode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="route_bd">
+      <EntityTypeMapping TypeName="masmix_dbModel.route_bd">
+        <MappingFragment StoreEntitySet="route_bd">
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="route_name" ColumnName="route_name" />
+          <ScalarProperty Name="route_from_country" ColumnName="route_from_country" />
+          <ScalarProperty Name="route_from_city" ColumnName="route_from_city" />
+          <ScalarProperty Name="route_to_country" ColumnName="route_to_country" />
+          <ScalarProperty Name="route_to_city" ColumnName="route_to_city" />
+          <ScalarProperty Name="route_state" ColumnName="route_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_bd">
+      <EntityTypeMapping TypeName="masmix_dbModel.service_bd">
+        <MappingFragment StoreEntitySet="service_bd">
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="service_name" ColumnName="service_name" />
+          <ScalarProperty Name="service_state" ColumnName="service_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wharehouse_bd">
+      <EntityTypeMapping TypeName="masmix_dbModel.wharehouse_bd">
+        <MappingFragment StoreEntitySet="wharehouse_bd">
+          <ScalarProperty Name="wharehouse_id" ColumnName="wharehouse_id" />
+          <ScalarProperty Name="wharehouse_name" ColumnName="wharehouse_name" />
+          <ScalarProperty Name="wharehouse_state" ColumnName="wharehouse_state" />
+          <ScalarProperty Name="wharehouse_country_id" ColumnName="wharehouse_country_id" />
+          <ScalarProperty Name="wharehouse_city_id" ColumnName="wharehouse_city_id" />
+          <ScalarProperty Name="wharehouse_size_desc" ColumnName="wharehouse_size_desc" />
+          <ScalarProperty Name="wharehouse_width_ft" ColumnName="wharehouse_width_ft" />
+          <ScalarProperty Name="wharehouse_width_cm" ColumnName="wharehouse_width_cm" />
+          <ScalarProperty Name="wharehouse_length_ft" ColumnName="wharehouse_length_ft" />
+          <ScalarProperty Name="wharehouse_length_cm" ColumnName="wharehouse_length_cm" />
+          <ScalarProperty Name="wharehouse_hieght_ft" ColumnName="wharehouse_hieght_ft" />
+          <ScalarProperty Name="wharehouse_hieght_cm" ColumnName="wharehouse_hieght_cm" />
+          <ScalarProperty Name="wharehouse_address" ColumnName="wharehouse_address" />
+          <ScalarProperty Name="wharehouse_tel1" ColumnName="wharehouse_tel1" />
+          <ScalarProperty Name="wharehouse_tel2" ColumnName="wharehouse_tel2" />
+          <ScalarProperty Name="is_office_delivery" ColumnName="is_office_delivery" />
+          <ScalarProperty Name="is_warehouse" ColumnName="is_warehouse" />
+          <ScalarProperty Name="time_from" ColumnName="time_from" />
+          <ScalarProperty Name="time_to" ColumnName="time_to" />
+          <ScalarProperty Name="day_off" ColumnName="day_off" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="routes_of_services">
+      <EntityTypeMapping TypeName="masmix_dbModel.routes_of_services">
+        <MappingFragment StoreEntitySet="routes_of_services">
+          <ScalarProperty Name="ser" ColumnName="ser" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="services_of_cities">
+      <EntityTypeMapping TypeName="masmix_dbModel.services_of_cities">
+        <MappingFragment StoreEntitySet="services_of_cities">
+          <ScalarProperty Name="ser" ColumnName="ser" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shipments_of_services">
+      <EntityTypeMapping TypeName="masmix_dbModel.shipments_of_services">
+        <MappingFragment StoreEntitySet="shipments_of_services">
+          <ScalarProperty Name="ser" ColumnName="ser" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="shipment_id" ColumnName="shipment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

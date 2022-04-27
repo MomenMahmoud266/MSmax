@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Release_1.route_bd>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.route_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.route_from_country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.route_from_city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.route_to_country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.route_to_city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.route_state)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_from_country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_from_city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_to_country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_to_city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.route_state)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.route_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.route_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.route_id })
+        </td>
+    </tr>
+}
+
+</table>

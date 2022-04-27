@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masmix_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="city_bd">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="city_name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="city_code" Type="varchar" MaxLength="5" />
+          <Property Name="city_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="city_country_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="city_desc" Type="varchar" MaxLength="450" />
+          <Property Name="city_general_conditions" Type="ntext" />
+          <Property Name="is_pickup" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="is_delivery" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country_bd">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country_Name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="country_code" Type="varchar" MaxLength="5" />
+          <Property Name="country_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="country_desc" Type="varchar" MaxLength="450" />
+          <Property Name="country_general_coditions" Type="ntext" />
+        </EntityType>
+        <EntityType Name="definitions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="def_name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="def_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="def_desc" Type="varchar" MaxLength="450" />
+          <Property Name="scode" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="route_bd">
+          <Key>
+            <PropertyRef Name="route_id" />
+          </Key>
+          <Property Name="route_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="route_name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="route_from_country" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_from_city" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_to_country" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_to_city" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.routes_of_services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="routes_of_services">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="route_id" />
+          </Key>
+          <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="service_bd">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="service_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.services_of_cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="services_of_cities">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="city_id" />
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="city_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'masmix_db.dbo.shipments_of_services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="shipments_of_services">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="shipment_id" />
+          </Key>
+          <Property Name="ser" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="shipment_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wharehouse_bd">
+          <Key>
+            <PropertyRef Name="wharehouse_id" />
+          </Key>
+          <Property Name="wharehouse_id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="wharehouse_name" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="wharehouse_state" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_country_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_city_id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_size_desc" Type="varchar" MaxLength="450" Nullable="false" />
+          <Property Name="wharehouse_width_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_width_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_length_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_length_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_hieght_ft" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_hieght_cm" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_address" Type="varchar" MaxLength="450" Nullable="false" />
+          <Property Name="wharehouse_tel1" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="wharehouse_tel2" Type="varchar" MaxLength="11" />
+          <Property Name="is_office_delivery" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="is_warehouse" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="time_from" Type="varchar" MaxLength="5" />
+          <Property Name="time_to" Type="varchar" MaxLength="5" />
+          <Property Name="day_off" Type="varchar" MaxLength="350" />
+        </EntityType>
+        <EntityContainer Name="masmix_dbModelStoreContainer">
+          <EntitySet Name="city_bd" EntityType="Self.city_bd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="country_bd" EntityType="Self.country_bd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="definitions" EntityType="Self.definitions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="route_bd" EntityType="Self.route_bd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="service_bd" EntityType="Self.service_bd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wharehouse_bd" EntityType="Self.wharehouse_bd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="routes_of_services" EntityType="Self.routes_of_services" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [routes_of_services].[ser] AS [ser], 
+    [routes_of_services].[service_id] AS [service_id], 
+    [routes_of_services].[route_id] AS [route_id]
+    FROM [dbo].[routes_of_services] AS [routes_of_services]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="services_of_cities" EntityType="Self.services_of_cities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [services_of_cities].[ser] AS [ser], 
+    [services_of_cities].[city_id] AS [city_id], 
+    [services_of_cities].[service_id] AS [service_id]
+    FROM [dbo].[services_of_cities] AS [services_of_cities]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="shipments_of_services" EntityType="Self.shipments_of_services" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [shipments_of_services].[ser] AS [ser], 
+    [shipments_of_services].[service_id] AS [service_id], 
+    [shipments_of_services].[shipment_id] AS [shipment_id]
+    FROM [dbo].[shipments_of_services] AS [shipments_of_services]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masmix_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="city_bd">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="city_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="city_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="city_country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="city_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="city_general_conditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_pickup" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="is_delivery" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country_bd">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country_Name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="country_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="country_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="country_general_coditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="definition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="def_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="def_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="def_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="scode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="route_bd">
+          <Key>
+            <PropertyRef Name="route_id" />
+          </Key>
+          <Property Name="route_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="route_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="route_from_country" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_from_city" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_to_country" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_to_city" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="service_bd">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="service_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wharehouse_bd">
+          <Key>
+            <PropertyRef Name="wharehouse_id" />
+          </Key>
+          <Property Name="wharehouse_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="wharehouse_name" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wharehouse_state" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_country_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wharehouse_size_desc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wharehouse_width_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_width_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_length_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_length_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_hieght_ft" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_hieght_cm" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="wharehouse_address" Type="String" MaxLength="450" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wharehouse_tel1" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wharehouse_tel2" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="is_office_delivery" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="is_warehouse" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="time_from" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="time_to" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="day_off" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="routes_of_services">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="route_id" />
+          </Key>
+          <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="route_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="services_of_cities">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="city_id" />
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="city_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shipments_of_services">
+          <Key>
+            <PropertyRef Name="ser" />
+            <PropertyRef Name="service_id" />
+            <PropertyRef Name="shipment_id" />
+          </Key>
+          <Property Name="ser" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="shipment_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="masmix_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="city_bd" EntityType="Self.city_bd" />
+          <EntitySet Name="country_bd" EntityType="Self.country_bd" />
+          <EntitySet Name="definitions" EntityType="Self.definition" />
+          <EntitySet Name="route_bd" EntityType="Self.route_bd" />
+          <EntitySet Name="service_bd" EntityType="Self.service_bd" />
+          <EntitySet Name="wharehouse_bd" EntityType="Self.wharehouse_bd" />
+          <EntitySet Name="routes_of_services" EntityType="Self.routes_of_services" />
+          <EntitySet Name="services_of_cities" EntityType="Self.services_of_cities" />
+          <EntitySet Name="shipments_of_services" EntityType="Self.shipments_of_services" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masmix_dbModelStoreContainer" CdmEntityContainer="masmix_dbEntities">
+          <EntitySetMapping Name="city_bd">
+            <EntityTypeMapping TypeName="masmix_dbModel.city_bd">
+              <MappingFragment StoreEntitySet="city_bd">
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_code" ColumnName="city_code" />
+                <ScalarProperty Name="city_state" ColumnName="city_state" />
+                <ScalarProperty Name="city_country_id" ColumnName="city_country_id" />
+                <ScalarProperty Name="city_desc" ColumnName="city_desc" />
+                <ScalarProperty Name="city_general_conditions" ColumnName="city_general_conditions" />
+                <ScalarProperty Name="is_pickup" ColumnName="is_pickup" />
+                <ScalarProperty Name="is_delivery" ColumnName="is_delivery" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="country_bd">
+            <EntityTypeMapping TypeName="masmix_dbModel.country_bd">
+              <MappingFragment StoreEntitySet="country_bd">
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="country_Name" ColumnName="country_Name" />
+                <ScalarProperty Name="country_code" ColumnName="country_code" />
+                <ScalarProperty Name="country_state" ColumnName="country_state" />
+                <ScalarProperty Name="country_desc" ColumnName="country_desc" />
+                <ScalarProperty Name="country_general_coditions" ColumnName="country_general_coditions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="definitions">
+            <EntityTypeMapping TypeName="masmix_dbModel.definition">
+              <MappingFragment StoreEntitySet="definitions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="def_name" ColumnName="def_name" />
+                <ScalarProperty Name="def_state" ColumnName="def_state" />
+                <ScalarProperty Name="def_desc" ColumnName="def_desc" />
+                <ScalarProperty Name="scode" ColumnName="scode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="route_bd">
+            <EntityTypeMapping TypeName="masmix_dbModel.route_bd">
+              <MappingFragment StoreEntitySet="route_bd">
+                <ScalarProperty Name="route_id" ColumnName="route_id" />
+                <ScalarProperty Name="route_name" ColumnName="route_name" />
+                <ScalarProperty Name="route_from_country" ColumnName="route_from_country" />
+                <ScalarProperty Name="route_from_city" ColumnName="route_from_city" />
+                <ScalarProperty Name="route_to_country" ColumnName="route_to_country" />
+                <ScalarProperty Name="route_to_city" ColumnName="route_to_city" />
+                <ScalarProperty Name="route_state" ColumnName="route_state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="service_bd">
+            <EntityTypeMapping TypeName="masmix_dbModel.service_bd">
+              <MappingFragment StoreEntitySet="service_bd">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="service_name" ColumnName="service_name" />
+                <ScalarProperty Name="service_state" ColumnName="service_state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wharehouse_bd">
+            <EntityTypeMapping TypeName="masmix_dbModel.wharehouse_bd">
+              <MappingFragment StoreEntitySet="wharehouse_bd">
+                <ScalarProperty Name="wharehouse_id" ColumnName="wharehouse_id" />
+                <ScalarProperty Name="wharehouse_name" ColumnName="wharehouse_name" />
+                <ScalarProperty Name="wharehouse_state" ColumnName="wharehouse_state" />
+                <ScalarProperty Name="wharehouse_country_id" ColumnName="wharehouse_country_id" />
+                <ScalarProperty Name="wharehouse_city_id" ColumnName="wharehouse_city_id" />
+                <ScalarProperty Name="wharehouse_size_desc" ColumnName="wharehouse_size_desc" />
+                <ScalarProperty Name="wharehouse_width_ft" ColumnName="wharehouse_width_ft" />
+                <ScalarProperty Name="wharehouse_width_cm" ColumnName="wharehouse_width_cm" />
+                <ScalarProperty Name="wharehouse_length_ft" ColumnName="wharehouse_length_ft" />
+                <ScalarProperty Name="wharehouse_length_cm" ColumnName="wharehouse_length_cm" />
+                <ScalarProperty Name="wharehouse_hieght_ft" ColumnName="wharehouse_hieght_ft" />
+                <ScalarProperty Name="wharehouse_hieght_cm" ColumnName="wharehouse_hieght_cm" />
+                <ScalarProperty Name="wharehouse_address" ColumnName="wharehouse_address" />
+                <ScalarProperty Name="wharehouse_tel1" ColumnName="wharehouse_tel1" />
+                <ScalarProperty Name="wharehouse_tel2" ColumnName="wharehouse_tel2" />
+                <ScalarProperty Name="is_office_delivery" ColumnName="is_office_delivery" />
+                <ScalarProperty Name="is_warehouse" ColumnName="is_warehouse" />
+                <ScalarProperty Name="time_from" ColumnName="time_from" />
+                <ScalarProperty Name="time_to" ColumnName="time_to" />
+                <ScalarProperty Name="day_off" ColumnName="day_off" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="routes_of_services">
+            <EntityTypeMapping TypeName="masmix_dbModel.routes_of_services">
+              <MappingFragment StoreEntitySet="routes_of_services">
+                <ScalarProperty Name="ser" ColumnName="ser" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="route_id" ColumnName="route_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="services_of_cities">
+            <EntityTypeMapping TypeName="masmix_dbModel.services_of_cities">
+              <MappingFragment StoreEntitySet="services_of_cities">
+                <ScalarProperty Name="ser" ColumnName="ser" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shipments_of_services">
+            <EntityTypeMapping TypeName="masmix_dbModel.shipments_of_services">
+              <MappingFragment StoreEntitySet="shipments_of_services">
+                <ScalarProperty Name="ser" ColumnName="ser" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="shipment_id" ColumnName="shipment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
