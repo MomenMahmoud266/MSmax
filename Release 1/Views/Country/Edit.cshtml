@@ -1,76 +1,52 @@
 ﻿@model Release_1.country_bd
-    
-@{
-    ViewBag.Title = "Edit";
-}
 
-<h2>Edit</h2>
+
+
 
 @using (Html.BeginForm())
-{   @Html.HiddenFor(c=> c.country_id)
+{
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>country_bd</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="~/Content/Admin/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Content Header (Page header) -->
+        <h2>
+            Country Form
+            <small>Preview</small>
+        </h2>
         <div class="form-group">
-            @Html.LabelFor(model => model.country_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.country_Name, "", new { @class = "text-danger" })
-            </div>
+            <label for="exampleInputCountry1">Country Name</label>
+            @Html.TextBoxFor(model => model.country_Name, new { @class = "form-control", @placeholder = "Enter Country Name" })
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.country_code, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country_code, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.country_code, "", new { @class = "text-danger" })
-            </div>
+            <label for="exampleInputCountryCode1">Country Code</label>
+            @Html.TextBoxFor(model => model.country_code, new { @class = "form-control", @placeholder = "Enter Country Code" })
         </div>
-
+        <label>Country State</label>
+        <div class="radio">
+            <label> @Html.RadioButtonFor(model => model.country_state, "1") Active </label>
+            <label> @Html.RadioButtonFor(model => model.country_state, "0") Inactive </label>
+        </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.country_state, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.country_state, new List<SelectListItem>
-                          {
-                              new SelectListItem {Text = "Active", Value = "1"},
-                              new SelectListItem {Text = "InActive", Value = "0"}
-                          }
-                              , new { htmlAttributes = new { @class = "form-control" } })      
-                @Html.ValidationMessageFor(model => model.country_state, "", new { @class = "text-danger" })
-                        </div>
+            <label>Description</label>
+            @Html.TextAreaFor(model => model.country_desc,
+          new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.country_desc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country_desc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.country_desc, "", new { @class = "text-danger" })
-            </div>
+            <label>Description</label>
+            @Html.TextAreaFor(model => model.country_general_coditions,
+          new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.country_general_coditions, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country_general_coditions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.country_general_coditions, "", new { @class = "text-danger" })
-            </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Edit" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    </body>
 }

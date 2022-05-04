@@ -87,5 +87,11 @@ namespace Release_1.Controllers
             var cities = db.city_bd.Where(c => c.city_country_id == countryid).ToList<city_bd>();
             return Json(cities, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var country = db.route_bd.Single(c => c.route_id == id);
+            return View(country);
+        }
     }
  }

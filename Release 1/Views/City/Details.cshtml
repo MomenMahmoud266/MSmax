@@ -1,0 +1,82 @@
+﻿@model Release_1.city_bd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>city_bd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.city_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city_country_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_country_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city_general_conditions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city_general_conditions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_pickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_pickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_delivery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_delivery)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.city_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

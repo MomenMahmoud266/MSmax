@@ -1,49 +1,37 @@
 ﻿@model Release_1.service_bd
 
-@{
-    ViewBag.Title = "Edit";
-}
 
-<h2>Edit</h2>
+
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(c => c.service_id)
-
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>service_bd</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="~/Content/Admin/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Content Header (Page header) -->
+        <h2>
+            Service Form
+            <small>Preview</small>
+        </h2>
         <div class="form-group">
-            @Html.LabelFor(model => model.service_name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.service_name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.service_name, "", new { @class = "text-danger" })
-            </div>
+            <label for="exampleInputService">Service Name</label>
+            @Html.TextBoxFor(model => model.service_name, new { @class = "form-control" })
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.service_state, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.service_state, new List<SelectListItem>
-           {
-               new SelectListItem {Text = "Active", Value = "1"},
-               new SelectListItem {Text = "InActive", Value = "0"}
-           }
-               , new { htmlAttributes = new { @class = "form-control" } })                @Html.ValidationMessageFor(model => model.service_state, "", new { @class = "text-danger" })
+        <div class="radio">
+            <h4>Service State</h4>
+            <label> @Html.RadioButtonFor(model => model.service_state, "1") Active </label>
+            <label> @Html.RadioButtonFor(model => model.service_state, "0") Inactive </label>
         </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Add</button>
         </div>
-    </div>
-</div>
+    </body>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

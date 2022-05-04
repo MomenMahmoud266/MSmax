@@ -210,6 +210,7 @@ $(function () {
    * INITIALIZE BUTTON TOGGLE
    * ------------------------
    */
+
   $('.btn-group[data-toggle="btn-toggle"]').each(function () {
     var group = $(this);
     $(this).find(".btn").on('click', function (e) {

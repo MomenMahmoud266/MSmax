@@ -1,0 +1,239 @@
+﻿@model Release_1.Models.WharehouseViewModel
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="~/Content/Admin/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- iCheck for checkboxes and radio inputs -->
+        <link rel="stylesheet" href="~/Content/Admin/plugins/iCheck/all.css">
+        <!-- Bootstrap time Picker -->
+        <link rel="stylesheet" href="~/Content/Admin/plugins/timepicker/bootstrap-timepicker.min.css">
+        <!-- Select2 -->
+        <link rel="stylesheet" href="~/Content/Admin/plugins/select2/select2.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="~/Content/Admin/dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="~/Content/Admin/dist/css/skins/_all-skins.min.css">
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Content Header (Page header) -->
+        <h2>
+            Wharehouse Form
+            <small>Preview</small>
+        </h2>
+        <div class="form-group">
+            <label for="exampleInputWharehouse">Wharehouse Name</label>
+            @Html.EditorFor(model => model.wharehouse.wharehouse_name, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <label> Wharehouse State </label>
+        <div class="radio">
+            <label> @Html.RadioButtonFor(model => model.wharehouse.wharehouse_state, "1") Active </label>
+            <br />
+            <label> @Html.RadioButtonFor(model => model.wharehouse.wharehouse_state, "0") Inactive </label>
+        </div>
+        <div class="form-group">
+            <label>Wharehouse country id</label>
+
+            @Html.DropDownListFor(model => model.wharehouse.wharehouse_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+            , new { @id = "Country", @name = "Country", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Wharehouse city id</label>
+            @Html.DropDownListFor(model => model.wharehouse.wharehouse_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+            , new { @id = "Country", @name = "Country", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Wharehouse size description</label>
+            @Html.TextAreaFor(model => model.wharehouse.wharehouse_size_desc,
+           new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
+        </div>
+        <!-- jQuery 2.1.4 -->
+        <script src="~/Content/Admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="~/Content/Admin/bootstrap/js/bootstrap.min.js"></script>
+        <label>Wharehouse width</label>
+        <div class="input-group margin">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a>Cm</a></li>
+                    <li><a>Feet</a></li>
+                    <li><a>Pound</a></li>
+                </ul>
+
+            </div><!-- /btn-group -->
+            <input type="number" class="form-control">
+        </div><!-- /input-group -->
+        <label>Wharehouse length</label>
+        <div class="input-group margin">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="selection">Unit</span><span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li value="1"><a>Cm</a></li>
+                    <li><a>Feet</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <input type="number" class="form-control">
+        </div><!-- /input-group -->
+        <label>Wharehouse height</label>
+        <div class="input-group margin">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="selection">Unit</span><span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a>Cm</a></li>
+                    <li><a>Feet</a></li>
+                    <li><a>Pound</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <input type="number" class="form-control">
+        </div><!-- /input-group -->
+        <div class="form-group">
+            <label for="exampleInputWharehouseAddress">Wharehouse address</label>
+            @Html.TextAreaFor(model => model.wharehouse.wharehouse_address,
+          new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
+        <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <!-- phone mask -->
+        <div class="form-group">
+            <label>Tel 1:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                </div>
+                @Html.TextBoxFor(model => model.wharehouse.wharehouse_tel1, new { @type = "text", @class = "form-control", @placeholder = "Phone number", @data_masked = "", @data_inputmask = "'mask': '(999) 999-9999'" })
+
+            </div>
+        </div>
+        <!-- phone mask -->
+        <div class="form-group">
+            <label>Tel 2:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                </div>
+                @Html.TextBoxFor(model => model.wharehouse.wharehouse_tel2, new { @type = "text", @class = "form-control", @placeholder = "Phone number", @data_masked = "", @data_inputmask = "'mask': '(999) 999-9999'" })
+            </div>
+        </div>
+        <!-- Select2 -->
+        <script src="~/Content/Admin/plugins/select2/select2.full.min.js"></script>
+        <!-- SELECT2 EXAMPLE -->
+        <div class="form-group">
+            <label> Day-Off </label>
+
+            @Html.DropDownList("selectedvalue", new List<SelectListItem>
+               {
+                   new SelectListItem {Text = "Saturday"},
+                   new SelectListItem {Text = "Sunday"},
+                   new SelectListItem {Text = "Monday"},
+                   new SelectListItem {Text = "Tuesday"},
+                   new SelectListItem {Text = "Wednesda"},
+                   new SelectListItem {Text = "Thursday"},
+                   new SelectListItem {Text = "Friday"},
+               }, new { @class = "form-control select2", @multiple = "multiple", @style = "width: 100%;", @id = "test", @data_placeholder = "Select day" })
+
+        </div><!-- /.form-group -->
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Office-delivery
+                </label>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Wharehouse
+                </label>
+            </div>
+        </div>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="~/Content/Admin/bootstrap/js/bootstrap.min.js"></script>
+        <!-- bootstrap time picker -->
+        <script src="~/Content/Admin/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <div class="bootstrap-timepicker">
+            <div class="form-group">
+                <label>Time From:</label>
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.wharehouse.time_from, new { @type = "text", @class = "form-control timepicker" })
+
+                    <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+        </div>
+        <div class="bootstrap-timepicker">
+            <div class="form-group">
+                <label>Time To:</label>
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.wharehouse.time_to, new { @type = "text", @class = "form-control timepicker" })
+                    <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+        </div>
+
+
+        <div class="box-footer">
+            <button type="submit" style="color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;">
+                Submit
+            </button>
+        </div>
+        <script>
+            //Inputmask
+            $(document).ready(function () {
+                Inputmask().mask(document.querySelectorAll("input"));
+            });
+            //Initialize Select2 Elements
+            $(".select2").select2();
+            //Timepicker
+            $(".timepicker").timepicker({
+                showInputs: false
+            });
+            //Units
+            $(function () {
+
+                $(".dropdown-menu li a").click(function () {
+
+                    $(".btn:first-child").text($(this).text());
+                    $(".btn:first-child").val($(this).text());
+
+                });
+
+            });
+        </script>
+    </body>
+</html>
+}

@@ -1,0 +1,66 @@
+﻿@model Release_1.route_bd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>route_bd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.route_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.route_from_country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_from_country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.route_from_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_from_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.route_to_country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_to_country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.route_to_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_to_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.route_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.route_state)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.route_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

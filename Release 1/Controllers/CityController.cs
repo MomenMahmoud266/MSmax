@@ -39,7 +39,7 @@ namespace Release_1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Get");
             }
-            return HttpNotFound();
+            return Json(city);
         }
         public ActionResult Edit(int id)
         {
@@ -75,6 +75,13 @@ namespace Release_1.Controllers
             db.city_bd.Remove(city);
             db.SaveChanges();
             return RedirectToAction("Get");
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var country = db.city_bd.Single(c => c.city_id == id);
+            return View(country);
         }
     }
 }

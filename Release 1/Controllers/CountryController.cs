@@ -58,5 +58,11 @@ namespace Release_1.Controllers
             db.SaveChanges();
             return RedirectToAction("Get");
         }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var country = db.country_bd.Single(c => c.country_id == id);
+            return View(country);
+        }
     }
 }

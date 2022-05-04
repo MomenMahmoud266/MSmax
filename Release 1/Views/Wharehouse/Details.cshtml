@@ -1,0 +1,170 @@
+﻿@model Release_1.wharehouse_bd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>wharehouse_bd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_country_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_country_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_city_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_city_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_size_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_size_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_width_ft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_width_ft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_width_cm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_width_cm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_length_ft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_length_ft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_length_cm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_length_cm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_hieght_ft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_hieght_ft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_hieght_cm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_hieght_cm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_tel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_tel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wharehouse_tel2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wharehouse_tel2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_office_delivery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_office_delivery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_warehouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_warehouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_from)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_from)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_to)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_to)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.day_off)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.day_off)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.wharehouse_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -13,7 +13,7 @@ namespace Release_1.Controllers
         // GET: Wharehouse
 
 
-        public ActionResult Get()
+        public ActionResult get()
         {
 
             return View(db.wharehouse_bd.ToList());
@@ -41,42 +41,42 @@ namespace Release_1.Controllers
             var uservaluelength = wh.wharehouse.wharehouse_length_ft;
             var uservaluehieght = wh.wharehouse.wharehouse_hieght_ft;
 
-            if (selectedvalue == "1")
-            {
-                wh.wharehouse.wharehouse_width_ft = uservaluewidth;
-                wh.wharehouse.wharehouse_width_cm = uservaluewidth / 30.48m;
+            //if (selectedvalue == "1")
+            //{
+            //    wh.wharehouse.wharehouse_width_ft = uservaluewidth;
+            //    wh.wharehouse.wharehouse_width_cm = uservaluewidth / 30.48m;
 
-                wh.wharehouse.wharehouse_length_ft = uservaluelength;
-                wh.wharehouse.wharehouse_length_cm = uservaluelength / 30.48m;
+            //    wh.wharehouse.wharehouse_length_ft = uservaluelength;
+            //    wh.wharehouse.wharehouse_length_cm = uservaluelength / 30.48m;
 
-                wh.wharehouse.wharehouse_hieght_ft = uservaluehieght;
-                wh.wharehouse.wharehouse_hieght_cm = uservaluehieght / 30.48m;
-            }
-            else if (selectedvalue == "0")
-            {
-                wh.wharehouse.wharehouse_width_cm = uservaluewidth;
-                wh.wharehouse.wharehouse_width_ft = uservaluewidth * 30.48m;
+            //    wh.wharehouse.wharehouse_hieght_ft = uservaluehieght;
+            //    wh.wharehouse.wharehouse_hieght_cm = uservaluehieght / 30.48m;
+            //}
+            //else if (selectedvalue == "0")
+            //{
+            //    wh.wharehouse.wharehouse_width_cm = uservaluewidth;
+            //    wh.wharehouse.wharehouse_width_ft = uservaluewidth * 30.48m;
 
-                wh.wharehouse.wharehouse_length_cm = uservaluelength;
-                wh.wharehouse.wharehouse_length_ft = uservaluelength * 30.48m;
+            //    wh.wharehouse.wharehouse_length_cm = uservaluelength;
+            //    wh.wharehouse.wharehouse_length_ft = uservaluelength * 30.48m;
 
-                wh.wharehouse.wharehouse_hieght_cm = uservaluehieght;
-                wh.wharehouse.wharehouse_hieght_ft = uservaluehieght * 30.48m;
-            }
-            //var test = wh.wharehouse.wharehouse_name;
-            //var test1 = wh.wharehouse.wharehouse_length_cm;
+            //    wh.wharehouse.wharehouse_hieght_cm = uservaluehieght;
+            //    wh.wharehouse.wharehouse_hieght_ft = uservaluehieght * 30.48m;
+            //}
+            var test = wh.wharehouse.wharehouse_name;
+            var test1 = wh.wharehouse.wharehouse_length_cm;
 
-            //return Content("ft:" + test + "       cm:" + test1 + "   lezgo       " + selectedvalue1);
+            return Content("ft:" + test + "       cm:" + test1 + "   lezgo       " + selectedvalue1);
 
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
 
-                db.wharehouse_bd.Add(wh.wharehouse);
-                db.SaveChanges();
-                return RedirectToAction("Get");
-            }
-            return Json(wh.wharehouse);
+            //    db.wharehouse_bd.Add(wh.wharehouse);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Get");
+            //}
+            //return Json(wh.wharehouse);
 
         }
         [HttpGet]
@@ -102,6 +102,12 @@ namespace Release_1.Controllers
             db.wharehouse_bd.Remove(wharehouse);
             db.SaveChanges();
             return RedirectToAction("Get");
+        }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var country = db.wharehouse_bd.Single(c => c.wharehouse_id == id);
+            return View(country);
         }
     }
 }

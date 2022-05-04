@@ -170,3 +170,92 @@ G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\Release 1\bin\Sys
 G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\Release 1\bin\System.Net.Http.Formatting.xml
 G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\Release 1\bin\System.Web.Http.xml
 G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\Release 1\bin\System.Web.Http.WebHost.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Release 1.dll.config
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Release 1.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Release 1.pdb
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csc.exe
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csc.exe.config
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csc.rsp
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csi.exe
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csi.exe.config
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\csi.rsp
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.Managed.Core.targets
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.AppContext.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Collections.Immutable.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Console.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Globalization.Calendars.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.IO.Compression.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.IO.FileSystem.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Net.Http.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Net.Sockets.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Reflection.Metadata.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.ValueTuple.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Xml.XmlDocument.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Xml.XPath.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\vbc.exe
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\vbc.exe.config
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\vbc.rsp
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\VBCSCompiler.exe
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\roslyn\VBCSCompiler.exe.config
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Antlr3.Runtime.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\EntityFramework.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\EntityFramework.SqlServer.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Microsoft.Web.Infrastructure.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Newtonsoft.Json.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Net.Http.Formatting.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Helpers.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Http.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Http.WebHost.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Mvc.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Optimization.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Razor.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.Deployment.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.Razor.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\WebGrease.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\EntityFramework.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\EntityFramework.SqlServer.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Net.Http.Formatting.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Http.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Http.WebHost.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Helpers.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Mvc.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Optimization.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.Razor.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.Deployment.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\System.Web.WebPages.Razor.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Newtonsoft.Json.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Antlr3.Runtime.pdb
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\obj\Debug\Release 1.csproj.CoreCompileInputs.cache
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\obj\Debug\Release 1.csproj.CopyComplete
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\obj\Debug\Release 1.dll
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\obj\Debug\Release 1.pdb
+G:\projects\MasMix-20220420T204533Z-001\New folder\Release 1.1\MSmax\Release 1\obj\Debug\Release 1.csproj.AssemblyReference.cache

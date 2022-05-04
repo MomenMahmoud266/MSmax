@@ -1,105 +1,69 @@
 ﻿@model Release_1.Models.CityViewModel
-    ViewBag.Title = "Edit";
-}
-
-<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(c => c.city.city_id)
-
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>city_bd</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="~/Content/Admin/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Content Header (Page header) -->
+        <h2>
+            City Form
+            <small>Preview</small>
+        </h2>
         <div class="form-group">
-            @Html.LabelFor(model => model.city.city_name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.city.city_name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_name, "", new { @class = "text-danger" })
+            <label for="exampleInputCity1">City Name</label>
+            @Html.TextBoxFor(model => model.city.city_name, new { @class = "form-control", @placeholder = "Enter City Name" })
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCityCode1">City Code</label>
+            @Html.TextBoxFor(model => model.city.city_code, new { @class = "form-control", @placeholder = "Enter City Name" })
+        </div>
+        <label>City State</label>
+        <div class="radio">
+            <label> @Html.RadioButtonFor(model => model.city.city_state, "1") Active </label>
+            <label> @Html.RadioButtonFor(model => model.city.city_state, "0") Inactive </label>
+        </div>
+        <div class="form-group">
+            <label>City country id</label>
+            @Html.DropDownListFor(model => model.city.city_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
+                   , new { @id = "Country", @name = "Country", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            @Html.TextAreaFor(model => model.city.city_desc,
+         new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>General Conditions</label>
+            @Html.TextAreaFor(model => model.city.city_general_conditions,
+                     new { @placeholder = "Write something here....", @rows = "3", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Pick-up
+                </label>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    Delivery
+                </label>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.city_code, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.city.city_code, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_code, "", new { @class = "text-danger" })
-            </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.city_state, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.city.city_state, new List<SelectListItem>
-                           {
-                               new SelectListItem {Text = "Active", Value = "1"},
-                               new SelectListItem {Text = "InActive", Value = "0"}
-                           }
-                               , new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_state, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.city_country_id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.city.city_country_id, new SelectList(Model.active_countries, "country_id", "country_name")
-                               , new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_country_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.city_desc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.city.city_desc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_desc, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.city_general_conditions, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.city.city_general_conditions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.city.city_general_conditions, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city.is_pickup, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.city.is_pickup, new List<SelectListItem>
-                           {
-                               new SelectListItem {Text = "yes", Value = "1"},
-                               new SelectListItem {Text = "No", Value = "0"}
-                           }
-                               , new { htmlAttributes = new { @class = "form-control" } })                @Html.ValidationMessageFor(model => model.city.is_pickup, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.city.is_delivery, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownListFor(model => model.city.is_delivery, new List<SelectListItem>
-                                       {
-                                           new SelectListItem {Text = "Yes", Value = "1"},
-                                           new SelectListItem {Text = "No", Value = "0"}
-                                       }
-                                           , new { htmlAttributes = new { @class = "form-control" } })                @Html.ValidationMessageFor(model => model.city.is_delivery, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Create" class="btn btn-default" />
-                                    </div>
-                                </div>
-                            </div>
-                        }
-
-                        <div>
-                            @Html.ActionLink("Back to List", "Index")
-                        </div>
+    </body>
+}
